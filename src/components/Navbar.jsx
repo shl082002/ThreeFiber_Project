@@ -20,7 +20,7 @@ export default function Navbar() {
           Contact
         </li>
       </ul>
-      <div className="sm:hidden flex text-[3rem] text-[#3aafab]">
+      <div className="sm:hidden flex text-[3rem] text-[#3aafab] px-[0.5rem]">
         {toggle ? (
           <AiOutlineClose onClick={() => setToggle(!toggle)} />
         ) : (

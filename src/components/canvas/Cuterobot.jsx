@@ -32,7 +32,7 @@ function Rig({ children }) {
   return <group ref={ref}>{children}</group>;
 }
 
-const Cuterobot = () => {
+const Cuterobot = ({isTablet}) => {
   const group = useRef();
   const { nodes, materials } = useGLTF("/CuteRobot.glb");
   useFrame((state) => {
@@ -52,68 +52,68 @@ const Cuterobot = () => {
         <lineSegments
           geometry={nodes.Object_2.geometry}
           material={materials["Material.002"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
         <mesh
           geometry={nodes.Object_3.geometry}
           material={materials["Material.001"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
         <mesh
           geometry={nodes.Object_4.geometry}
           material={materials["Material.002"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
         <mesh
           geometry={nodes.Object_5.geometry}
           material={materials["Material.002"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
         <mesh
           geometry={nodes.Object_6.geometry}
           material={materials["Material.002"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
         <mesh
           geometry={nodes.Object_7.geometry}
           material={materials["Material.002"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
         <mesh
           geometry={nodes.Object_8.geometry}
           material={materials["Material.002"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
         <mesh
           geometry={nodes.Object_9.geometry}
           material={materials["Material.002"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
         <mesh
           geometry={nodes.Object_10.geometry}
           material={materials["Material.002"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
         <mesh
           geometry={nodes.Object_11.geometry}
           material={materials["Material.002"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
         <mesh
           geometry={nodes.Object_12.geometry}
           material={materials["Material.003"]}
-          scale={[25, 25, 25]}
-          position={[0,0,6]}
+          scale={isTablet ? [10, 10, 10] : [25,25,25]}
+          position={[0, 0, 6]}
         />
       </group>
     </group>
@@ -121,6 +121,22 @@ const Cuterobot = () => {
 };
 
 const RoboCanvas = () => {
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width : 800px)");
+    setIsTablet(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsTablet(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
   return (
     <div className="w-full h-max grid sm:grid-cols-2 grid-cols-1 main-body">
       <div className="flex flex-col justify-center items-center text-white sm:p-[2rem]">
@@ -143,7 +159,9 @@ const RoboCanvas = () => {
             <BsFillLightbulbFill className="sm:text-[10rem] text-[8rem] mx-[2rem]" />
           </div>
           <div className="flex flex-col">
-            <span className="sm:text-[2.5rem] text-[2rem] px-[1rem]">AI Creative Tools</span>
+            <span className="sm:text-[2.5rem] text-[2rem] px-[1rem]">
+              AI Creative Tools
+            </span>
             <span className="text-[1rem] px-[1rem]">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Adipisci, eius.
@@ -169,7 +187,9 @@ const RoboCanvas = () => {
             <FaGlobe className="sm:text-[10rem] text-[8rem] mx-[2rem]" />
           </div>
           <div className="flex flex-col">
-            <span className="sm:text-[2.5rem] text-[2rem] px-[1rem]">VR/AR on the Web</span>
+            <span className="sm:text-[2.5rem] text-[2rem] px-[1rem]">
+              VR/AR on the Web
+            </span>
             <span className="text-[1rem] px-[1rem]">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Adipisci, eius.
@@ -177,7 +197,7 @@ const RoboCanvas = () => {
           </div>
         </div>
       </div>
-      <div className="invisible sm:visible">
+      <div className="invisible md:visible">
         <Canvas camera={{ position: [0, -10, 65], fov: 50 }} dpr={[1, 2]}>
           <pointLight position={[100, 100, 100]} intensity={0.8} />
           <hemisphereLight
@@ -193,7 +213,7 @@ const RoboCanvas = () => {
               minPolarAngle={Math.PI / 2}
             />
             <Rig>
-              <Cuterobot url="/CuteRobot.glb" />
+              <Cuterobot url="/CuteRobot.glb" isTablet = {isTablet} />
             </Rig>
           </Suspense>
         </Canvas>
