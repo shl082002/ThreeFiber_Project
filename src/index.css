@@ -28,6 +28,7 @@
     color: rgb(255, 255, 255);
     text-shadow:-2px 1px rgb(41 88 153);
     font-style: italic;  
+    text-align: center;
 }
 .footer{
     background: linear-gradient(50deg, rgba(0,111,134,1) 0%, rgba(19,234,192,0.7848389355742297) 100%);

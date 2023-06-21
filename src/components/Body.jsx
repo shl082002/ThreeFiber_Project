@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 export default function Body() {
   return (
     <>
-      <div className="overlay z-[100] text-white bg-none">
-        <span className="bg-none flex items-center justify-center font-bold sm:text-[6rem] text-[3.5rem] absolute inset-0 sm:bottom-[20%] bottom-[30%]">
+      <div className="overlay z-[100] text-white bg-none flex items-center justify-center">
+        <span className="bg-none font-bold sm:text-[6rem] text-[3.5rem] absolute top-[24%] ">
           Welcome To <br /> Ctruh
         </span>
       </div>
-      <div className="overlay_subtext z-[100] bg-none">
-        <span className="bg-none flex items-center justify-center font-medium sm:text-[1.5rem] text-[1.2rem] absolute inset-0 sm:top-[30%] top-[15%]">
+      <div className="overlay_subtext z-[100] bg-none flex justify-center items-center">
+        <span className="bg-none font-medium sm:text-[1.5rem] text-[1.2rem] absolute sm:bottom-[28%] bottom-[32%] ">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           <br /> Commodi ratione animi voluptatem! Vel, quos consequuntur!
         </span>
