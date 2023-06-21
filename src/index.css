@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* *{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(34,29,116,1) 100%);
+} */
+
+.nav_icon{
+    animation: rotation 10s infinite linear;
+    color:#3aafab;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  .nav_list{
+    text-shadow:-1px 2px rgb(41 88 153);
+    font-weight: 500;
+
+  }
+.overlay{
+    /* position: absolute;
+    top: 25%;
+    left: 32%; */
+    text-shadow: -4px 4px rgb(41 88 153);
+    text-align: center;
+}
+.overlay_subtext{
+    /* position: absolute;
+    top: 66%;
+    left: 29%; */
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow:-2px 1px rgb(41 88 153);
+    font-style: italic;  
+}
+.overlay_btn{
+    /* position: absolute;
+    bottom: 13%;
+    left: 45%; */
+    background: #3aafab;
+}
+.footer{
+    background: linear-gradient(50deg, rgba(0,111,134,1) 0%, rgba(19,234,192,0.7848389355742297) 100%);
+}
+.main-body{
+  background: linear-gradient(50deg, rgba(0,111,134,1) 0%, rgba(19,234,192,0.7848389355742297) 100%); 
+}
