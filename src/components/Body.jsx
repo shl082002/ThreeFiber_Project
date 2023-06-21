@@ -1,5 +1,4 @@
 import React from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
 
 export default function Body() {

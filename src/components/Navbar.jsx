@@ -2,7 +2,6 @@ import { useState } from "react";
 import { IoIosCube } from "react-icons/io"; //nav-icon
 import { GiHamburgerMenu } from "react-icons/gi"; //menu-icon
 import { AiOutlineClose } from "react-icons/ai"; //close-icon
-import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
@@ -23,18 +22,6 @@ export default function Navbar() {
           onClick={() => navigate("/aboutus")}
         >
           About
-        </li>
-        <li
-          className="bg-none cursor-pointer hover:text-red-300 hover:text-[1.65rem] "
-          onClick={() => navigate("/")}
-        >
-          Blog
-        </li>
-        <li
-          className="bg-none cursor-pointer hover:text-red-300 hover:text-[1.65rem] "
-          onClick={() => navigate("/")}
-        >
-          Contact
         </li>
       </ul>
       <div className="sm:hidden flex text-[3rem] text-[#3aafab] px-[0.5rem]">
@@ -67,24 +54,6 @@ export default function Navbar() {
             }}
           >
             About
-          </li>
-          <li
-            className="bg-none cursor-pointer hover:text-red-300 hover:text-[1.5rem] "
-            onClick={() => {
-              setToggle(!toggle)
-              navigate('/')
-            }}
-          >
-            Blog
-          </li>
-          <li
-            className="bg-none cursor-pointer hover:text-red-300 hover:text-[1.5rem] "
-            onClick={() => {
-              setToggle(!toggle)
-              navigate('/')
-            }}
-          >
-            Contact
           </li>
         </ul>
       </div>

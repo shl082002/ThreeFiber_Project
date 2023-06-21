@@ -135,15 +135,6 @@ const ModelsCanvas = () => {
             <Rig>
               <Models url="/compressed.glb" />
             </Rig>
-            {/* <ContactShadows
-              rotation-x={Math.PI / 2}
-              position={[0, -35, 0]}
-              opacity={0.25}
-              width={100}
-              height={100}
-              blur={2}
-              far={50}
-            /> */}
           </group>
         </Suspense>
       </Canvas>

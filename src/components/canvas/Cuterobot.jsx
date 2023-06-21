@@ -1,9 +1,7 @@
 import React, { Suspense, useEffect, useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
-  ContactShadows,
   OrbitControls,
-  Preload,
   useGLTF,
 } from "@react-three/drei";
 import * as THREE from "three";
@@ -12,9 +10,7 @@ import {
   BsFillShieldLockFill,
   BsFillLightbulbFill,
 } from "react-icons/bs";
-import { GrSettingsOption } from "react-icons/gr";
 import { FaGlobe } from "react-icons/fa";
-import StarsCanvas from "./Stars";
 
 function Rig({ children }) {
   const ref = useRef();
