@@ -6,7 +6,7 @@ export default function Body() {
   return (
     <>
       <div className="overlay z-[100] text-white bg-none flex items-center justify-center">
-        <span className="bg-none font-bold sm:text-[6rem] text-[3.5rem] absolute top-[24%] ">
+        <span className="bg-none font-bold sm:text-[6rem] text-[3.5rem] absolute sm:top-[20%] top-[24%] ">
           Welcome To <br /> Ctruh
         </span>
       </div>
